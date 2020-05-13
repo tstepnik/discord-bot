@@ -1,5 +1,8 @@
 package com.tstepnik.events;
 
+import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.User;
+import net.dv8tion.jda.api.events.Event;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -25,5 +28,10 @@ public class RemoveSpam extends ListenerAdapter {
         }
 
         return false;
+    }
+
+    private static boolean isAdmin(GuildMessageReceivedEvent event){
+        User author = event.getMessage().getAuthor();
+        return false;//TODO 
     }
 }
